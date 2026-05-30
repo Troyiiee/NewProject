@@ -99,7 +99,7 @@ function showToast(choice) {
   setTimeout(() => {
     toast.classList.remove("show");
     redirected = true;
-    window.location.href = "information.html"; // 👈 change this
+    window.location.href = "information.html";
   }, 2000);
 }
 

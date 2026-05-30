@@ -145,28 +145,19 @@ function shakeNo(btn) {
   setTimeout(() => btn.classList.remove("active"), 400);
 }
 
-// laod data 
+// load data 
 window.onload = () => {
-  const feelings = localStorage.getItem("feelings");
-  const date = localStorage.getItem("date");
-  const time = localStorage.getItem("time");
-  const type = localStorage.getItem("dateType");
+  const el = id => document.getElementById(id);
 
-  if (feelings)
-    document.getElementById("infoFeelings").textContent =
-      `Feelings: ${feelings} ❤️`;
+  const feelings = localStorage.getItem("feelings") || "Not set";
+  const date = localStorage.getItem("date") || "Not set";
+  const time = localStorage.getItem("time") || "Not set";
+  const type = localStorage.getItem("dateType") || "Not set";
 
-  if (date)
-    document.getElementById("infoDate").textContent =
-      `Date: ${date}`;
-
-  if (time)
-    document.getElementById("infoTime").textContent =
-      `Time: ${time}`;
-
-  if (type)
-    document.getElementById("infoType").textContent =
-      `Activity: ${type}`;
+  el("infoFeelings").textContent = `Feelings: ${feelings} ❤️`;
+  el("infoDate").textContent = `Date: ${date}`;
+  el("infoTime").textContent = `Time: ${time}`;
+  el("infoType").textContent = `Activity: ${type}`;
 };
 
 function next() {
